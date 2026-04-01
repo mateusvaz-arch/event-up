@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventUp — Backlog</title>
+    <link rel="stylesheet" href="css/backlog.css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="top">
+        <h1>EventUp — Backlog</h1>
+        <a href="/">← Voltar para o app</a>
+      </div>
+
+      <p class="description">
+        Este backlog apresenta a evolução do projeto e as próximas atividades
+        planejadas, seguindo o método Scrum e as mudanças de requisitos do
+        cliente.
+      </p>
+
+      <div class="card status-done">
+        <div class="badges">
+          <span class="badge completed">Entregue (Final)</span>
+          <span class="badge">Prioridade Máxima</span>
+        </div>
+        <h3>Sprint Final: Autenticação, Mobile e Recursos Nativos</h3>
+        <ul>
+          <li>
+            <b>Autenticação:</b> Implementação de Context API para login, logout
+            e proteção de rotas privadas (Home, Criar, Favoritos).
+          </li>
+          <li>
+            <b>Recurso Nativo:</b> Integração com a câmera do dispositivo
+            através da API MediaDevices para captura de fotos de eventos.
+          </li>
+          <li>
+            <b>Mobile Optimization:</b> Ajustes de UX para iOS (evitar zoom em
+            inputs) e Android (tamanhos de toque).
+          </li>
+          <li>
+            <b>Arquitetura:</b> Migração para Context API para gerenciamento de
+            estado global de usuário.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card status-done">
+        <div class="badges">
+          <span class="badge completed">Entregue (Sprint 3)</span>
+          <span class="badge">Prioridade Média</span>
+        </div>
+        <h3>Sprint 3: Favoritos e Notificações</h3>
+        <ul>
+          <li>
+            <b>Contador reativo:</b> Navbar com badge de favoritos em tempo real
+          </li>
+          <li><b>Persistência:</b> Sincronização com localStorage</li>
+          <li><b>UX:</b> Feedback visual ao adicionar/remover itens</li>
+        </ul>
+      </div>
+
+      <div class="card status-done">
+        <div class="badges">
+          <span class="badge completed">Entregue (Sprint 2)</span>
+          <span class="badge">Prioridade Alta</span>
+        </div>
+        <h3>Sprint 2: CRUD e Filtros</h3>
+        <ul>
+          <li><b>CRUD:</b> Criação e listagem de eventos via interface</li>
+          <li>
+            <b>Filtros dinâmicos:</b> Filtragem por localidade com "Todos"
+          </li>
+          <li>
+            <b>LocalStorage:</b> Salvamento persistente dos eventos criados
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <span class="badge">Sprint 5 (Atual)</span>
+          <span class="badge">Prioridade Alta</span>
+        </div>
+        <h3>Gestures, Navegação e Testes</h3>
+        <ul>
+          <li><b>Menu de navegação:</b> Menu lateral (Drawer) para mobile</li>
+          <li>
+            <b>Gestures:</b> Implementação de swipe lateral para
+            favoritar/descartar cards
+          </li>
+          <li>
+            <b>Qualidade:</b> Cobertura de testes unitários com React Testing
+            Library
+          </li>
+          <li>
+            <b>Roteamento:</b> Melhoria no fluxo de navegação entre Home, Criar
+            e Favoritos
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <span class="badge">Futuro (Nativo)</span>
+          <span class="badge">Estratégico</span>
+        </div>
+        <h3>Transição para Mobile Nativo</h3>
+        <ul>
+          <li>Avaliação técnica para React Native</li>
+          <li>Sincronização offline-first</li>
+          <li>Push Notifications nativas</li>
+        </ul>
+      </div>
+
+      <div class="footer">TP3 — Desenvolvimento Front-end com Frameworks</div>
+    </div>
+  </body>
+</html>
