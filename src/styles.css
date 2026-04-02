@@ -33,16 +33,8 @@ body {
   margin: 0;
   color: var(--text);
   background: #0b0f17;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    Segoe UI,
-    Roboto,
-    Helvetica,
-    Arial,
-    "Apple Color Emoji",
-    "Segoe UI Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.35;
 }
 
@@ -88,7 +80,7 @@ body {
 }
 
 .nav-links a {
-  padding: 0.6rem 1rem;
+  padding: 15px 11px 0px 8px !important;
   border-radius: 999px;
   color: var(--muted);
   font-size: 0.9rem;
@@ -101,6 +93,7 @@ body {
   border: 1px solid rgba(124, 58, 237, 0.3);
   text-decoration: none;
   padding: 15px 11px 0px 8px;
+  height: 50px;
 }
 
 a {
@@ -168,10 +161,7 @@ a {
   border-radius: 999px;
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.04);
-  transition:
-    transform 0.12s ease,
-    border 0.12s ease,
-    background 0.12s ease;
+  transition: transform 0.12s ease, border 0.12s ease, background 0.12s ease;
 }
 
 .navbar a:hover {
@@ -318,6 +308,10 @@ a {
   border-color: var(--danger);
 }
 
+Link {
+  padding: 15px 11px 0px 8px;
+}
+
 .event-card:hover {
   transform: translateY(-0px);
   border-color: var(--primary);
@@ -407,10 +401,7 @@ a {
   font-weight: 600;
   font-size: 0.95rem;
 
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease,
-    border 0.12s ease,
+  transition: transform 0.12s ease, background 0.12s ease, border 0.12s ease,
     filter 0.12s ease;
 }
 
