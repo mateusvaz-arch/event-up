@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function CreateEvent() {
@@ -8,9 +8,22 @@ export default function CreateEvent() {
   const [isFree, setIsFree] = useState(true);
   const [image, setImage] = useState("");
   const [showCamera, setShowCamera] = useState(false);
+  const [appData, setAppData] = useState({ cities: [], defaultEventImage: "" });
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setAppData(data);
+        if (data.cities.length > 0) {
+          setSelectedLocation(data.cities[0].name);
+        }
+      })
+      .catch((err) => console.error("Erro ao carregar dados:", err));
+  }, []);
 
   const startCamera = async () => {
     setShowCamera(true);
@@ -49,22 +62,10 @@ export default function CreateEvent() {
     setShowCamera(false);
   };
 
-  // Cidades pré-definidas com coordenadas para a API de clima
-  const availableCities = [
-    { name: "São Paulo", lat: -23.5505, lon: -46.6333 },
-    { name: "Rio de Janeiro", lat: -22.9068, lon: -43.1729 },
-    { name: "Belo Horizonte", lat: -19.9167, lon: -43.9345 },
-    { name: "Curitiba", lat: -25.4284, lon: -49.2733 },
-    { name: "Salvador", lat: -12.9714, lon: -38.5014 },
-    { name: "Fortaleza", lat: -3.7172, lon: -38.5283 },
-    { name: "Porto Alegre", lat: -30.0346, lon: -51.2177 },
-    { name: "Brasília", lat: -15.7801, lon: -47.9292 },
-  ];
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const cityData = availableCities.find((c) => c.name === selectedLocation);
+    const cityData = appData.cities.find((c) => c.name === selectedLocation);
 
     const newEvent = {
       id: Date.now(),
@@ -72,9 +73,7 @@ export default function CreateEvent() {
       date,
       location: selectedLocation,
       isFree,
-      image:
-        image ||
-        "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=400",
+      image: image || appData.defaultEventImage,
       lat: cityData?.lat || -23.5505,
       lon: cityData?.lon || -46.6333,
     };
@@ -130,7 +129,7 @@ export default function CreateEvent() {
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
               >
-                {availableCities.map((city) => (
+                {appData.cities.map((city) => (
                   <option key={city.name} value={city.name}>
                     {city.name}
                   </option>
