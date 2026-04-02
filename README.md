@@ -29,6 +29,41 @@ O projeto foi construído sob o preceito de **Mobile-First**, incluindo tratamen
 - **Android**: Otimização de áreas de toque (mínimo 44px) para melhor acessibilidade.
 - **Gestos**: Implementação de `onTouch` events para interações naturais em telas sensíveis ao toque.
 
+## Estrutura do Projeto
+
+```
+├── public
+│   ├── css
+│   │   └── backlog.css
+│   ├── backlog.html
+│   ├── data.json
+│   └── index.html
+├── src
+│   ├── components
+│   │   ├── EventCard.js
+│   │   ├── EventCard.test.js
+│   │   ├── Navbar.js
+│   │   ├── ProtectedRoute.js
+│   │   └── WeatherCard.js
+│   ├── contexts
+│   │   └── AuthContext.js
+│   ├── pages
+│   │   ├── CreateEvent.js
+│   │   ├── Favorites.js
+│   │   ├── Home.js
+│   │   └── Login.js
+│   ├── services
+│   │   └── weather.js
+│   ├── APirest.js
+│   ├── App.js
+│   ├── index.js
+│   └── styles.css
+├── .gitignore
+├── README.md
+├── package-lock.json
+└── package.json
+```
+
 ## Como Executar
 
 1. Instale as dependências:
