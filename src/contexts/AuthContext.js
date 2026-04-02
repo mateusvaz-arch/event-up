@@ -15,7 +15,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   const login = (email, password) => {
-    // Simulação de login - Em um cenário real, aqui chamaria uma API
+    // Simulação de login 
     if (email && password) {
       const userData = { email, name: email.split("@")[0] };
       setUser(userData);

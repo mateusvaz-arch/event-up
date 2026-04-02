@@ -109,7 +109,7 @@ export default function CreateEvent() {
               required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Ex: Workshop de React"
+              placeholder="Workshop de React"
             />
           </div>
 
@@ -148,7 +148,7 @@ export default function CreateEvent() {
                 type="url"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
-                placeholder="https://images.unsplash.com/..."
+                placeholder="https://images..com/..."
                 style={{ flex: 1 }}
               />
               <button

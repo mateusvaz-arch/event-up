@@ -44,7 +44,6 @@ export default function Navbar() {
             style={{
               fontSize: "1.4rem",
               fontWeight: "900",
-              letterSpacing: "1px",
               color: "white",
             }}
           >
