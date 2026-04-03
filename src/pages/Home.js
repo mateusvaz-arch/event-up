@@ -41,10 +41,10 @@ export default function Home() {
     // Carregar eventos criados pelo usuário no localStorage
     const userEvents = JSON.parse(localStorage.getItem("user_events") || "[]");
 
-    // Mesclar os eventos fixos (initial state) com os do usuário
+    // Mesclar os eventos fixos com os do usuário
     setEvents((prev) => {
       const allEvents = [...prev, ...userEvents];
-      // Evitar duplicados comparando IDs (caso o componente renderize mais de uma vez)
+      // Evitar duplicados comparando IDs 
       const uniqueEvents = allEvents.filter(
         (event, index, self) =>
           index === self.findIndex((e) => e.id === event.id),
